@@ -43,5 +43,15 @@ public class Server {
             }
         }).start();
     }
+
+    public void sendMsgClient(String message) {
+        try {
+            bufferedWriter.write(message);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
