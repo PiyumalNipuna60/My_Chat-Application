@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -28,6 +29,25 @@ public class ClientFormController implements Initializable {
     public TextField txtMsg;
     public Button btnSend;
     private Client client;
+
+    public static void addLabel(String massageFromSever, VBox vBox) {
+        HBox hBox = new HBox();
+        hBox.setAlignment(Pos.CENTER_LEFT);
+        hBox.setPadding(new Insets(5, 5, 5, 10));
+
+        Text text = new Text(massageFromSever);
+        TextFlow textFlow = new TextFlow(text);
+        textFlow.setStyle(" -fx-background-color: rgb(233,233,255);"+" -fx-background-radius: 20px");
+        textFlow.setPadding(new Insets(5, 10, 5, 10));
+        hBox.getChildren().add(textFlow);
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                vBox.getChildren().add(hBox);
+            }
+        });
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -64,7 +84,6 @@ public class ClientFormController implements Initializable {
             }
         });
 
-        // client.receivedMessageFormSever(vbox_msg);
         client.receivedMessageFormSever(vbox_msg);
 
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
