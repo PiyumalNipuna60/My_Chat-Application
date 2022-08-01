@@ -23,7 +23,13 @@ public class Client {
     }
 
     public void sendMassageSever(String messageToSever){
-
+        try {
+            bufferedWriter.write(messageToSever);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
