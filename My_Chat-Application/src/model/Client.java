@@ -22,7 +22,7 @@ public class Client {
         }
     }
 
-    public void sendMassageSever(String messageToSever){
+    public void sendMassageSever(String messageToSever) {
         try {
             bufferedWriter.write(messageToSever);
             bufferedWriter.newLine();

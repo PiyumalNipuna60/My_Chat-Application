@@ -30,11 +30,11 @@ public class Server {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (socket.isConnected()){
+                while (socket.isConnected()) {
                     try {
-                        String massageClient=bufferedReader.readLine();
+                        String massageClient = bufferedReader.readLine();
                         ServerFormController.addLabel(massageClient, vbox_msg);
-                    }catch (IOException e){
+                    } catch (IOException e) {
                         e.printStackTrace();
                         break;
                     }

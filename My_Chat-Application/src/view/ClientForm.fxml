@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="578.0" prefWidth="532.0" style="-fx-background-color: #3c6382;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientFormController">
    <children>
       <AnchorPane layoutY="-5.0" prefHeight="56.0" prefWidth="532.0" style="-fx-background-color: #0a3d62;">
@@ -22,7 +21,7 @@
       </AnchorPane>
       <ScrollPane fx:id="main" layoutX="24.0" layoutY="91.0" prefHeight="402.0" prefWidth="488.0" style="-fx-background-color: #82ccdd;">
          <content>
-            <VBox fx:id="vbox_msg" prefHeight="413.0" prefWidth="493.0" />
+            <VBox fx:id="vbox_msg" prefHeight="382.0" prefWidth="485.0" />
          </content>
       </ScrollPane>
       <TextField fx:id="txtMsg" layoutX="17.0" layoutY="518.0" prefHeight="31.0" prefWidth="387.0" promptText="Type Here" style="-fx-border-radius: 10px;" />

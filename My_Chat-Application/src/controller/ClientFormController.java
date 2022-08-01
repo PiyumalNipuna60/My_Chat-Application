@@ -64,7 +64,6 @@ public class ClientFormController implements Initializable {
             }
         });
 
-        // client.receivedMessageFormSever(vbox_msg);
         client.receivedMessageFormSever(vbox_msg);
 
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
@@ -90,7 +89,6 @@ public class ClientFormController implements Initializable {
                     client.sendMassageSever(messageToSend);
                     txtMsg.clear();
                 }
-
             }
         });
     }

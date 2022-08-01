@@ -19,9 +19,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <ScrollPane fx:id="main" layoutX="27.0" layoutY="79.0" prefHeight="402.0" prefWidth="488.0" style="-fx-background-color: #82ccdd;">
+      <ScrollPane fx:id="main" layoutX="27.0" layoutY="72.0" prefHeight="409.0" prefWidth="488.0" style="-fx-background-color: #82ccdd;">
          <content>
-            <VBox fx:id="vbox_msg" prefHeight="413.0" prefWidth="493.0" />
+            <VBox fx:id="vbox_msg" prefHeight="406.0" prefWidth="464.0" />
          </content>
       </ScrollPane>
       <TextField fx:id="txtMsg" layoutX="27.0" layoutY="506.0" prefHeight="31.0" prefWidth="387.0" promptText="Type Here" style="-fx-border-radius: 10px;" />
