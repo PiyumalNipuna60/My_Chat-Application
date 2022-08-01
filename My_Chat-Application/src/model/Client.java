@@ -1,5 +1,8 @@
 package model;
 
+import controller.ClientFormController;
+import javafx.scene.layout.VBox;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -18,5 +21,10 @@ public class Client {
             System.out.println("Error creating client.");
         }
     }
+
+    public void sendMassageSever(String messageToSever){
+
+    }
+
 }
 

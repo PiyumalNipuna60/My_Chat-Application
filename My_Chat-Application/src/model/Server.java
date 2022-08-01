@@ -24,7 +24,6 @@ public class Server {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error creating server.");
-
         }
     }
 
@@ -38,6 +37,7 @@ public class Server {
                         ServerFormController.addLabel(massageClient, vbox_msg);
                     }catch (IOException e){
                         e.printStackTrace();
+                        break;
                     }
                 }
             }
