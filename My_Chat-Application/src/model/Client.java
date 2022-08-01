@@ -32,5 +32,22 @@ public class Client {
         }
     }
 
+    public void receivedMessageFormSever(VBox vBox) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (socket.isConnected()) {
+                    try {
+                        String massageFromSever = bufferedReader.readLine();
+                        ClientFormController.addLabel(massageFromSever, vBox);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+
+            }
+        }).start();
+    }
 }
 
