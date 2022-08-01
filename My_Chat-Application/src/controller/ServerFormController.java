@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -25,6 +27,15 @@ public class ServerFormController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        vbox_msg.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                main.setVvalue((Double)newValue);
+
+            }
+        });
+        server.receiveClientMsg(vbox_msg);
 
     }
 }
+
