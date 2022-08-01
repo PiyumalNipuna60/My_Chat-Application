@@ -48,6 +48,7 @@ public class ServerFormController implements Initializable {
         });
     }
 
+
     public void initialize(URL location, ResourceBundle resources) {
         try {
             server = new Server(new ServerSocket(8000));

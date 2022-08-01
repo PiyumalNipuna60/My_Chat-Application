@@ -37,7 +37,7 @@ public class ClientFormController implements Initializable {
 
         Text text = new Text(massageFromSever);
         TextFlow textFlow = new TextFlow(text);
-        textFlow.setStyle(" -fx-background-color: rgb(233,233,255);"+" -fx-background-radius: 20px");
+        textFlow.setStyle(" -fx-background-color: rgb(233,233,255);" + " -fx-background-radius: 20px");
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         hBox.getChildren().add(textFlow);
 
@@ -57,38 +57,39 @@ public class ClientFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        String messageToSend = txtMsg.getText();
-
-        if (!messageToSend.isEmpty()) {
-            HBox hBox = new HBox();
-            hBox.setAlignment(Pos.CENTER_RIGHT);
-
-            hBox.setPadding(new Insets(5, 5, 5, 10));
-            Text text = new Text(messageToSend);
-            TextFlow textFlow = new TextFlow(text);
-            textFlow.setStyle("-fx-color: rgb(239,242,255);"+"-fx-background-color: rgb(15,125,242);"+" -fx-background-radius: 20px");
-
-            textFlow.setPadding(new Insets(5, 10, 5, 10));
-            text.setFill(Color.color(0.934, 0.945, 0.996));
-
-            hBox.getChildren().add(textFlow);
-            vbox_msg.getChildren().add(hBox);
-
-            client.sendMassageSever(messageToSend);
-            txtMsg.clear();
-        }        vbox_msg.heightProperty().addListener(new ChangeListener<Number>() {
+        vbox_msg.heightProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 main.setVvalue((Double) newValue);
             }
         });
 
+        // client.receivedMessageFormSever(vbox_msg);
         client.receivedMessageFormSever(vbox_msg);
 
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                String messageToSend = txtMsg.getText();
+
+                if (!messageToSend.isEmpty()) {
+                    HBox hBox = new HBox();
+                    hBox.setAlignment(Pos.CENTER_RIGHT);
+
+                    hBox.setPadding(new Insets(5, 5, 5, 10));
+                    Text text = new Text(messageToSend);
+                    TextFlow textFlow = new TextFlow(text);
+                    textFlow.setStyle("-fx-color: rgb(239,242,255);" + "-fx-background-color: rgb(15,125,242);" + " -fx-background-radius: 20px");
+
+                    textFlow.setPadding(new Insets(5, 10, 5, 10));
+                    text.setFill(Color.color(0.934, 0.945, 0.996));
+
+                    hBox.getChildren().add(textFlow);
+                    vbox_msg.getChildren().add(hBox);
+
+                    client.sendMassageSever(messageToSend);
+                    txtMsg.clear();
+                }
 
             }
         });
