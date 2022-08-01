@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -21,7 +22,8 @@ import java.net.ServerSocket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ServerFormController{
+public class ServerFormController implements Initializable {
+
     public ScrollPane main;
     public VBox vbox_msg;
     public TextField txtMsg;
