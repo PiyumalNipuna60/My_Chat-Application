@@ -1,5 +1,6 @@
 package model;
 
+import controller.ServerFormController;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
@@ -28,6 +29,19 @@ public class Server {
     }
 
     public void receiveClientMsg(VBox vbox_msg) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (socket.isConnected()){
+                    try {
+                        String massageClient=bufferedReader.readLine();
+                        ServerFormController.addLabel(massageClient, vbox_msg);
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 }
 

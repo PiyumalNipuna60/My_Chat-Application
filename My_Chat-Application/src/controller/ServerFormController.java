@@ -20,6 +20,9 @@ public class ServerFormController {
     public Button btnSend;
     public Server server;
 
+    public static void addLabel(String massageClient, VBox vbox_msg) {
+    }
+
     public void initialize(URL location, ResourceBundle resources) {
         try {
             server = new Server(new ServerSocket(8000));
