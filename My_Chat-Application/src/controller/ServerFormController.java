@@ -30,20 +30,20 @@ public class ServerFormController implements Initializable {
     public Button btnSend;
     public Server server;
 
-    public static void addLabel(String massageClient, VBox vbox_msg) {
+    public static void addLabel(String massageClient, VBox vbox) {
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_LEFT);
         hBox.setPadding(new Insets(5, 5, 5, 10));
 
         Text text = new Text(massageClient);
         TextFlow textFlow = new TextFlow(text);
-        text.setStyle(" -fx-background-color: rgb(192,192,192);" + " -fx-background-radius: 22px");
+        textFlow.setStyle(" -fx-background-color: rgb(192,192,192);" + " -fx-background-radius: 22px");
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         hBox.getChildren().add(textFlow);
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                vbox_msg.getChildren().add(hBox);
+                vbox.getChildren().add(hBox);
             }
         });
     }
