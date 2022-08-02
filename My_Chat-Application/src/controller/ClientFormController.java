@@ -37,7 +37,7 @@ public class ClientFormController implements Initializable {
 
         Text text = new Text(massageFromSever);
         TextFlow textFlow = new TextFlow(text);
-        textFlow.setStyle(" -fx-background-color: rgb(233,233,255);" + " -fx-background-radius: 20px");
+        textFlow.setStyle(" -fx-background-color: rgb(192,192,192);" + " -fx-background-radius: 22px");
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         hBox.getChildren().add(textFlow);
 
@@ -52,7 +52,7 @@ public class ClientFormController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            client = new Client(new Socket("localhost", 8000));
+            client = new Client(new Socket("localhost", 8002));
             System.out.println("Connected to Sever.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +78,7 @@ public class ClientFormController implements Initializable {
                     hBox.setPadding(new Insets(5, 5, 5, 10));
                     Text text = new Text(messageToSend);
                     TextFlow textFlow = new TextFlow(text);
-                    textFlow.setStyle("-fx-color: rgb(239,242,255);" + "-fx-background-color: rgb(15,125,242);" + " -fx-background-radius: 20px");
+                    textFlow.setStyle("-fx-color: rgb(192,192,192);" + "-fx-background-color: rgb(15,125,242);" + " -fx-background-radius: 20px");
 
                     textFlow.setPadding(new Insets(5, 10, 5, 10));
                     text.setFill(Color.color(0.934, 0.945, 0.996));

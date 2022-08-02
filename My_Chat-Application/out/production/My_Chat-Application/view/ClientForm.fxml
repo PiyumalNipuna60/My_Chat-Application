@@ -25,6 +25,9 @@
          </content>
       </ScrollPane>
       <TextField fx:id="txtMsg" layoutX="17.0" layoutY="518.0" prefHeight="31.0" prefWidth="387.0" promptText="Type Here" style="-fx-border-radius: 10px;" />
-      <Button fx:id="btnSend" layoutX="419.0" layoutY="518.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #44bd32;" text="Sent" />
+      <Button fx:id="btnSend" layoutX="419.0" layoutY="518.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #44bd32;" text="Sent">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
